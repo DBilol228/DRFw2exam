@@ -13,3 +13,11 @@ class AccountSerializer(serializers.ModelSerializer):
         account.set_password(password)
         account.save()
         return account
+
+class TokenSerializer(serializers.Serializer):
+    phone_number = serializers.CharField()
+    password = serializers.CharField(write_only=True)
+
+class ChangePasswordSerializer(serializers.Serializer):
+    old_password = serializers.CharField(write_only=True)
+    new_password = serializers.CharField(write_only=True)
