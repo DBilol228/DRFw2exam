@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'groups_app',
     'profiles',
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
