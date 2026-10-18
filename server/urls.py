@@ -23,6 +23,7 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('api/accounts/', include('myapp.urls')),
     path('api/profiles/', include('profiles.urls')),
+    path('api/chats/', include('chats.urls')),
 ]
 
 if settings.DEBUG:
