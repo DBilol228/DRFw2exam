@@ -134,3 +134,6 @@ MAILERS = {
 }
 
 AUTH_USER_MODEL = 'myapp.Account'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
