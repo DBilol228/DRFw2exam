@@ -5,6 +5,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.conf import settings
 from django.conf.urls.static import static
+from groups_app.views import GroupMessageDeleteView
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -24,6 +25,8 @@ urlpatterns = [
     path('api/accounts/', include('myapp.urls')),
     path('api/profiles/', include('profiles.urls')),
     path('api/chats/', include('chats.urls')),
+    path('api/groups/',include('groups_app.urls')),
+    path('api/group-messages/<int:pk>/',GroupMessageDeleteView.as_view(),name='group-message-delete'),  
 ]
 
 if settings.DEBUG:
