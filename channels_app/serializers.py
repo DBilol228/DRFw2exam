@@ -11,10 +11,10 @@ class FollowingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Following
         fields = ['id','user','channel','created_at']
-        fields = ['id','user','created_at']
+        read_only_fields = ['id','user','channel','created_at']
 
-class PostSerialzier(serializers.ModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ['id','channel','title','description','content','created_at']
-        read_only_fields = ['id','created_at']
+        read_only_fields = ['id','channel','created_at']
