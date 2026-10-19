@@ -27,6 +27,7 @@ urlpatterns = [
     path('api/chats/', include('chats.urls')),
     path('api/groups/',include('groups_app.urls')),
     path('api/group-messages/<int:pk>/',GroupMessageDeleteView.as_view(),name='group-message-delete'),  
+    path('api/channels/', include('channels_app.urls')), 
 ]
 
 if settings.DEBUG:
