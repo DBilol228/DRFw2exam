@@ -15,7 +15,7 @@ class ProfileDetailView(RetrieveAPIView):
 class MyProfileView(UpdateAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
-    http_method_names = ['put','patch','options','head']
+    http_method_names = ['patch','options','head']
     def get_object(self):
         profile, created = Profile.objects.get_or_create(user=self.request.user,defaults={'username': self.request.user.username or self.request.user.phone_number})
         return profile
